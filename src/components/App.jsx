@@ -56,3 +56,11 @@ export const App = () => {
     </section>
   );
 };
+
+const Statistics = ({ stats, title }) => {
+  return (
+    <section>
+      <div>{stats.map(...)}</div>
+    </section>
+  );
+};
