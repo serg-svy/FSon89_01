@@ -1,7 +1,7 @@
 import css from './Product.module.css';
 
 export const Product = ({ title, price, discount }) => {
-  const productBg = discount ? 'rgb(151,230,5)' : '#f9bf04';
+  const productBg = discount ? '#97e605' : '#f9bf04';
 
   const productStyles = {
     backgroundColor: productBg,
@@ -13,15 +13,17 @@ export const Product = ({ title, price, discount }) => {
         src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?dpr=2&h=480&w=640"
         alt="Tacos With Lime"
         width="640"
-        className={css.productImg}
+        className={css.productImg} // "Product_productImg__HjAFi"
       />
-      <h2>{title}</h2>
+      <h2>{title} </h2>
       {discount ? (
-        <h3 className={css.discountBage}> Discount: {discount}$</h3>
+        <h3 className={css.discountBage}>Discount: {discount}$</h3>
       ) : (
-        <p>Sorry, but discount on this type of product has expired !</p>
+        <p className={css.apology}>
+          Sorry, but discount on this type of product has expired!
+        </p>
       )}
-      <p className={css.apology}>{price}$</p>
+      <p>Price: {price}$</p>
       <button className={css.productAddToCartBtn} type="button">
         Add to cart
       </button>

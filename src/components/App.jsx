@@ -1,5 +1,7 @@
-import { Product } from './Product';
-import css from './Product.module.css';
+import { Product } from './Product/Product';
+import Section from './Section/Section';
+
+import css from './App.module.css';
 
 const productsData = [
   {
@@ -20,28 +22,41 @@ const productsData = [
     price: 6.99,
     discount: null,
   },
+  {
+    id: '4',
+    title: 'Tacos S',
+    price: 1.5,
+    discount: null,
+  },
+  {
+    id: '5',
+    title: 'Tacos With Cheese',
+    price: 3.4,
+    discount: 0.2,
+  },
 ];
 
 export const App = () => {
   return (
-    <section>
-      <div className={css.product}>....</div>
-      <h1>Hello FSon89🥳</h1>
+    <div>
+      <Section>
+        <h1>Hello FSON89🥳</h1>
+      </Section>
 
-      {productsData.map(product => {
-        return (
-          <Product
-            key={product.id}
-            title={product.title}
-            price={product.price}
-            discount={product.discount}
-          />
-        );
-      })}
-    </section>
+      <Section title="Product List">
+        <div className={css.productList}>
+          {productsData.map(product => {
+            return (
+              <Product
+                key={product.id}
+                title={product.title}
+                price={product.price}
+                discount={product.discount}
+              />
+            );
+          })}
+        </div>
+      </Section>
+    </div>
   );
-};
-
-const Statistics = ({ stats, title }) => {
-  return <section></section>;
 };
