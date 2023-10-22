@@ -21,27 +21,10 @@ const productsData = [
   },
 ];
 
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-];
-
 export const App = () => {
   return (
     <section>
       <h1>Hello FSon89🥳</h1>
-
-      <ul>
-        {months.map(month => (
-          <li key={month}>{month}</li>
-        ))}
-      </ul>
 
       {productsData.map(product => {
         return (
@@ -58,9 +41,5 @@ export const App = () => {
 };
 
 const Statistics = ({ stats, title }) => {
-  return (
-    <section>
-      <div>{stats.map(...)}</div>
-    </section>
-  );
+  return <section></section>;
 };

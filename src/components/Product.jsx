@@ -1,6 +1,15 @@
 export const Product = ({ title, price, discount }) => {
+  const productBg = discount ? 'rgb(151,230,5)' : '#ffff';
+
+  const productStyles = {
+    border: '1px solid black',
+    padding: '10px',
+    backgroundColor: productBg,
+    borderRadius: '10px',
+  };
+
   return (
-    <div>
+    <div style={productStyles}>
       <img
         src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?dpr=2&h=480&w=640"
         alt="Tacos With Lime"
