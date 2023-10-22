@@ -1,4 +1,5 @@
 import { Product } from './Product';
+import css from './Product.module.css';
 
 const productsData = [
   {
@@ -24,6 +25,7 @@ const productsData = [
 export const App = () => {
   return (
     <section>
+      <div className={css.product}>....</div>
       <h1>Hello FSon89🥳</h1>
 
       {productsData.map(product => {
