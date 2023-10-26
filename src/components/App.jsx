@@ -2,6 +2,7 @@ import { Product } from './Product/Product';
 import Section from './Section/Section';
 
 import css from './App.module.css';
+import { render } from '@testing-library/react';
 
 const productsData = [
   {
@@ -37,26 +38,28 @@ const productsData = [
 ];
 
 export const App = () => {
-  return (
-    <div>
-      <Section>
-        <h1>Hello FSON89🥳</h1>
-      </Section>
-
-      <Section title="Product List">
-        <div className={css.productList}>
-          {productsData.map(product => {
-            return (
-              <Product
-                key={product.id}
-                title={product.title}
-                price={product.price}
-                discount={product.discount}
-              />
-            );
-          })}
-        </div>
-      </Section>
-    </div>
-  );
-};
+  render (){
+    return (
+      <div>
+        <Section>
+          <h1>Hello FSON89🥳</h1>
+        </Section>
+  
+        <Section title="Product List">
+          <div className={css.productList}>
+            {productsData.map(product => {
+              return (
+                <Product
+                  key={product.id}
+                  title={product.title}
+                  price={product.price}
+                  discount={product.discount}
+                />
+              );
+            })}
+          </div>
+        </Section>
+      </div>
+    );
+  };
+  }
